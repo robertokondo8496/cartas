@@ -9,7 +9,10 @@ import { Cartas } from './models/cartas';
 export class AppComponent {
   title = 'cards';
 
+  public carta?: Cartas;
+
   public exibirCarta(carta: Cartas){
     console.log(carta);
+    this.carta = carta;
   }
 }

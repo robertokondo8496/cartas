@@ -10,7 +10,15 @@
 
   </app-mostra-naipes>
 </nav>
-<main>
-  Selecione uma carta para exibir
+
+<main *ngIf="carta; else semCarta">
+  {{ carta!.valor }}
 </main>
+
+<ng-template #semCarta>
+  <main>
+    Selecione uma carta para exibir
+  </main>
+</ng-template>
+
 <router-outlet></router-outlet>
