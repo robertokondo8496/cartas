@@ -1,6 +1,7 @@
 <button 
     *ngFor="let carta of cartas"
     type="button"
+    (click)="selecionaCarta(carta)"
 >
     {{ carta.valor}}
 </button>

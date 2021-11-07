@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Cartas } from '../../models/cartas';
 
 @Component({
@@ -7,6 +7,9 @@ import { Cartas } from '../../models/cartas';
   styleUrls: ['./mostra-cartas.component.css']
 })
 export class MostraCartasComponent implements OnInit {
+
+  @Output()
+  public cartaSelecionada: EventEmitter<Cartas> = new EventEmitter();
 
   public cartas: Cartas[] = [
     new Cartas(
@@ -56,4 +59,7 @@ export class MostraCartasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public selecionaCarta(carta: Cartas){
+    this.cartaSelecionada.emit(carta);
+  }
 }

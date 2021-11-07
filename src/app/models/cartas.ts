@@ -6,4 +6,8 @@ export class Cartas {
     ){
 
     }
+    
+    public get carta(): string {
+        return `${this.valor}\\\\${this.naipe}\\\\${this.valor}`;
+    }
 }

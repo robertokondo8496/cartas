@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cartas } from './models/cartas';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cards';
+
+  public exibirCarta(carta: Cartas){
+    console.log(carta);
+  }
 }
