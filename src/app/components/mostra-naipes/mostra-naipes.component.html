@@ -1,6 +1,7 @@
 <button 
     *ngFor="let naipe of naipes"
     type="button"
+    (click)="selecionaNaipe(naipe)"
 >
     {{ naipe.naipe}}
 </button>

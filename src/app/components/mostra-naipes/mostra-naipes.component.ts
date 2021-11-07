@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Naipes } from '../../models/naipes';
 
 @Component({
@@ -7,6 +7,9 @@ import { Naipes } from '../../models/naipes';
   styleUrls: ['./mostra-naipes.component.css']
 })
 export class MostraNaipesComponent implements OnInit {
+
+  @Output()
+  public naipeSelecionado: EventEmitter<Naipes> = new EventEmitter();  
 
   public naipes: Naipes[] = [
     new Naipes(
@@ -28,4 +31,7 @@ export class MostraNaipesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public selecionaNaipe(naipe: Naipes){
+    this.naipeSelecionado.emit(naipe);
+  }
 }

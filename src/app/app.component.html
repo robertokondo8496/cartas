@@ -6,13 +6,26 @@
   </app-mostra-cartas>
 </nav>
 <nav>
-  <app-mostra-naipes>
-
+  <app-mostra-naipes
+    (naipeSelecionado)="exibirNaipe($event)"
+  >
   </app-mostra-naipes>
 </nav>
 
-<main *ngIf="carta; else semCarta">
-  {{ carta!.valor }}
+<main *ngIf="carta || naipe; else semCarta">
+  <div id="cartaRenderizada">
+    {{ carta!.valor }}
+    <br/>
+    <br/>
+    <div id="naipeCarta">
+      {{ naipe!.naipe }}
+    </div>
+    <br/>
+    <br/>
+    <div id="valorCartaAbaixo">
+      {{ carta!.valor }}
+    </div>
+  </div>
 </main>
 
 <ng-template #semCarta>
